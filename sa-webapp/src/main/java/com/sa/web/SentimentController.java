@@ -4,6 +4,8 @@ import com.sa.web.dto.SentenceDto;
 import com.sa.web.dto.SentimentDto;
 import com.sa.web.entity.Sentence;
 import com.sa.web.entity.SentenceRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +17,8 @@ import org.springframework.web.client.RestTemplate;
 @CrossOrigin(origins = "*")
 @RestController
 public class SentimentController {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Value("${sa.logic.api.url}")
     private String saLogicApiUrl;
@@ -31,7 +35,8 @@ public class SentimentController {
     @PostMapping("/sentiment")
     public SentimentDto sentimentAnalysis(@RequestBody SentenceDto sentenceDto) {
 
-        if (repository.findByName(sentenceDto.getSentence()) != null)
+        logger.info("sentimentAnalysis {}", sentenceDto);
+        if (repository.findBySentence(sentenceDto.getSentence()) != null)
             repository.save(new Sentence(sentenceDto.getSentence()));
 
         return restTemplate.postForEntity(saLogicApiUrl + "/analyse/sentiment",
