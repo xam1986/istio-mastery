@@ -22,7 +22,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: rinormaloku/sentiment-analysis-web-app:istio-tracing
+      - image: hamovdv/sentiment-analysis-webapp:istio
         imagePullPolicy: Always
         name: sa-web-app
         env:
