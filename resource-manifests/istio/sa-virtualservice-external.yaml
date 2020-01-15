@@ -67,6 +67,8 @@ spec:
   - match:
     - uri:
         prefix: /analyse/sentiment/z2
+    redirect:
+          uri: /analyse/sentiment/
     route:
     - destination:
         host: sa-logic
