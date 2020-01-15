@@ -70,3 +70,5 @@ spec:
     route:
     - destination:
         host: sa-logic
+        port:
+           number: 5000
