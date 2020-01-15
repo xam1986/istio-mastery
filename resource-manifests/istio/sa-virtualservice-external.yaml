@@ -41,26 +41,32 @@ spec:
         port:
           number: 80
   - match:
-      - uri:
-          prefix: /analyse/sentiment
-      - headers:
-          zone:
-            exact: zone01
-      route:
-      - destination:
-          host: sa-logic
-          port:
-            number: 5000
-          subset: z1
+    - uri:
+        prefix: /analyse/sentiment
+    - headers:
+        zone:
+          exact: zone01
+    route:
+    - destination:
+        host: sa-logic
+        port:
+          number: 5000
+        subset: z1
   - match:
-      - uri:
-          prefix: /analyse/sentiment
-      - headers:
-          zone:
-            exact: zone02
-      route:
-      - destination:
-          host: sa-logic
-          port:
-            number: 5000
-          subset: z2
+    - uri:
+        prefix: /analyse/sentiment
+    - headers:
+        zone:
+          exact: zone02
+    route:
+    - destination:
+        host: sa-logic
+        port:
+          number: 5000
+        subset: z2
+  - match:
+    - uri:
+        prefix: /analyse/sentiment
+    route:
+    - destination:
+        host: sa-logic
