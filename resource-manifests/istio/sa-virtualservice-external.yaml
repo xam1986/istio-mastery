@@ -67,7 +67,7 @@ spec:
   - match:
     - uri:
         prefix: /analyse/sentiment/z2
-    redirect:
+    rewrite:
           uri: /analyse/sentiment/
     route:
     - destination:
