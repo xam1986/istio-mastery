@@ -64,11 +64,3 @@ spec:
         port:
           number: 80
         subset: z2
-  - match:
-    - uri:
-        prefix: /analyse/sentiment
-    route:
-    - destination:
-        host: sa-logic
-        port:
-           number: 80
