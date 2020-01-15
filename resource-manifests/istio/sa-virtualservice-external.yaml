@@ -50,7 +50,7 @@ spec:
     - destination:
         host: sa-logic
         port:
-          number: 5000
+          number: 80
         subset: z1
   - match:
     - uri:
@@ -62,7 +62,7 @@ spec:
     - destination:
         host: sa-logic
         port:
-          number: 5000
+          number: 80
         subset: z2
   - match:
     - uri:
@@ -71,4 +71,4 @@ spec:
     - destination:
         host: sa-logic
         port:
-           number: 5000
+           number: 80
