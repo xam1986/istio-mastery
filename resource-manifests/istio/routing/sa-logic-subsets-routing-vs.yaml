@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: routing
+spec:
+  host: sa-logic
+  subsets:
+  - name: z1
+    labels:
+      version: v1
+  - name: z2
+    labels:
+      version: v2
