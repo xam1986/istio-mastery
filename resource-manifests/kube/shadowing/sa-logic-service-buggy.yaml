@@ -22,7 +22,7 @@ spec:
         version: v2
     spec:
       containers:
-        - image: rinormaloku/sentiment-analysis-logic:istio-buggy
+        - image: hamovdv/sentiment-analysis-logic:bug
           imagePullPolicy: Always
           name: sa-logic
           env:
