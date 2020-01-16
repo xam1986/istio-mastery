@@ -66,12 +66,9 @@ spec:
         subset: z2
   - match:
     - uri:
-        prefix: /analyse/sentiment/z2
-    rewrite:
-          uri: /analyse/sentiment/
+        prefix: /analyse/sentiment
     route:
     - destination:
         host: sa-logic
         port:
            number: 80
-        subset: z2
