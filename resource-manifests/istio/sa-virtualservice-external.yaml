@@ -41,11 +41,11 @@ spec:
         port:
           number: 80
   - match:
-    - uri:
-        prefix: /analyse/sentiment
     - headers:
         zone:
           exact: zone01
+      uri:
+        prefix: /analyse/sentiment
     route:
     - destination:
         host: sa-logic
@@ -53,11 +53,11 @@ spec:
           number: 80
         subset: z1
   - match:
-    - uri:
-        prefix: /analyse/sentiment
     - headers:
         zone:
           exact: zone02
+      uri:
+        prefix: /analyse/sentiment
     route:
     - destination:
         host: sa-logic
