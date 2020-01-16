@@ -22,7 +22,7 @@ spec:
         version: v1
     spec:
       containers:
-        - image: rinormaloku/sentiment-analysis-logic:istio-tracing
+        - image: hamovdv/sentiment-analysis-logic:bug
           imagePullPolicy: Always
           name: sa-logic
           env:

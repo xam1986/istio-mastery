@@ -33,6 +33,7 @@ tracer = FlaskTracer(jaeger_tracer)
 def analyse_sentiment():
     content = 'this was never meant to happen, please hide'
     random_number = random.randint(1,101)
+    return content, status.HTTP_500_INTERNAL_SERVER_ERROR
     if random_number < 34: 
         app.logger.debug('This failed badly')
         return content, status.HTTP_500_INTERNAL_SERVER_ERROR
